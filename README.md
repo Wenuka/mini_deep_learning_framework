@@ -9,8 +9,9 @@ For this project, we have implemented a Sequential Neural Network Object which c
 Training and testing data was generated using the function generate_disc_set. Two datasets were generated for training and testing purposes. Then the data were normalized. Each dataset is comprised of 1000 training samples and 1000 test samples. We will refer to the following definitions for the datasets hereafter for this report.
 * Dataset 1: data corresponds to the disk centred at (0.5,0.5) - Figure 1
 * Dataset 2: data corresponds to the disk centred at (0,0) - Figure 2
-[Figure 1: Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset1.png)
-[Figure 2: Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset2.png)
+
+Figure 1: Dataset 1![Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset1.png)
+Figure 2: Dataset 2![Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset2.png)
 
 ## Neural Network Modules
 Basic Neural Network Modules were developed to implement a Feed-Forward Neural Network without using the torch set_grad_enabled and only using the Tensor, matmul, zeros_like, sum, argmax and abs function/ objects from torch module. Following is a list of all the modules used to implement the feed-forward neural network.
@@ -35,8 +36,8 @@ We have used two neural network models to generate results, namely
 | Tanh model | 1.57% | 1.89% | 0.26% | 0.30% |
 
 
-[Figure 3: Sample Result for Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset1.png)
-[Figure 4: Sample Result for Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset2.png)
+Figure 3: Sample Result for Dataset 1![Sample Result for Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset1.png)
+Figure 4: Sample Result for Dataset 2![Sample Result for Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset2.png)
 
 In generating results we have averaged the results over 20 samples for each model for each dataset mentioned above and the error rates for each such model are mentioned in Table 1. 
 When comparing the results we can clearly see the results are much better for the dataset 2 that the dataset 1. This is mainly due to the limited decision boundary length exist in dataset 2 as seen in Figure 3 and 4. However, apart from that, the results were almost identical for each dataset. For the dataset 1, the error rate was in-between 1.5% - 1.9% while for dataset 2 the error was in-between 0.26% - 0.30%. 
