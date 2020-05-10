@@ -11,6 +11,7 @@ Training and testing data was generated using the function generate_disc_set. Tw
 * Dataset 2: data corresponds to the disk centred at (0,0) - Figure 2
 
 Figure 1: Dataset 1![Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset1.png)
+
 Figure 2: Dataset 2![Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/dataset2.png)
 
 ## Neural Network Modules
@@ -37,6 +38,7 @@ We have used two neural network models to generate results, namely
 
 
 Figure 3: Sample Result for Dataset 1![Sample Result for Dataset 1](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset1.png)
+
 Figure 4: Sample Result for Dataset 2![Sample Result for Dataset 2](https://raw.githubusercontent.com/Wenuka/mini_deep_learning_framework/master/assets/relu_mse_result_dataset2.png)
 
 In generating results we have averaged the results over 20 samples for each model for each dataset mentioned above and the error rates for each such model are mentioned in Table 1. 
