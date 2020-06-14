@@ -43,8 +43,8 @@ def generate_disc_set(nb, from_=0, to_=1, one_hot_encoding=False, label_1_in_cen
             target = input_.pow(2).sum(1).sub( 1/ (2*pi)).sign().add(1).div(2).long()
         if one_hot_encoding:
             new_target = zeros_like(input_)
-            new_target[:,1][target > 0.5] = 1 ## inside the circle
-            new_target[:,0][target < 0.5] = 1 ## outside the circle
+            new_target[:,1][target > 0] = 1 ## inside the circle
+            new_target[:,0][target < 1] = 1 ## outside the circle
             return input_, new_target
         return input_, target
     except (RuntimeError):

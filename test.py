@@ -20,7 +20,7 @@ def main() :
 	with_one_hot_encoding = True
 	label_1_in_center = True
 	early_stoping = True
-	epoch_count = 200
+	epoch_count = 250
 	look_back_count_early_stoping = 100
 	learning_rate = 100/(epoch_count * train_size)
 	loss_type_array = ['MSE','MAE']

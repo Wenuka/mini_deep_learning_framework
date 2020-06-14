@@ -59,7 +59,7 @@ class NNLinear(object):
     to return parameters
     :return:
     """
-    return [self.output, self.output_grad]  #### <---------- check with TA
+    return [self.weight, self.output_grad] 
 
 class NNTanh(object):
   """
@@ -293,14 +293,16 @@ class NNSequential(object):
                 else:
                   self.best_obj_array.append(self.NNobject_list[obj_idx])
           self.last_epoch_loss = epoch_loss
-          # print(f'{k} - {epoch_loss}') 
         self.backward() 
       self.epoch_lossval_array.append(sum(self.lossval_array[-self.batches_per_epoch:]))
       if early_stoping:  ## to stop training incase we get the expected loss
-        if (k>look_back_count_early_stoping and min(self.epoch_lossval_array[-look_back_count_early_stoping:])>= self.min_loss):
-          print(f"early finishing at epoch {k} because early stopping is enabled")
+        if (k>look_back_count_early_stoping and min(self.lossval_array[-(look_back_count_early_stoping*self.batches_per_epoch):])>= self.min_loss):
+          print(f"early finishing at epoch {k+1} because early stopping is enabled")
           self.NNobject_list = self.best_obj_array
           return 1
         elif epoch_loss == 0: ## stop training if the loss is zero
-          print(f'early finishing at epoch {k} because loss is zero...')
+          print(f'early finishing at epoch {k+1} because loss is zero...')
           return 1
+    if early_stoping:
+      print(f'returning objects with lowest loss because early stopping is enabled.')
+      self.NNobject_list = self.best_obj_array
